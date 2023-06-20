@@ -1,0 +1,16 @@
+*swn
+*swo
+*swp
+*~
+*.tmp
+temp/*
+.bundle
+.venv
+.goenv
+.config
+*.cfg
+*.lock
+*.sock
+**/__pycache__/**
+**/.pytest_cache/**
+__pycache__
