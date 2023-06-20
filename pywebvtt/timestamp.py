@@ -2,7 +2,7 @@ from enum import Enum
 import re
 from .errors import BadTimestamp
 
-__all__ = ['Timestamp']
+__all__ = ['TimeRangeType']
 
 
 RegTimeHMSMs = r"\s*([0-9]+)\:([0-9]+)\:([0-9]+)\.([0-9]+)\s*"

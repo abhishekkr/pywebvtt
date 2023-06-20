@@ -2,7 +2,7 @@ from enum import Enum
 import re
 from .timestamp import parse_timestr, parse_timestamp
 
-__all__ = ['Scene']
+__all__ = ['Metadata', 'Scene']
 
 
 RegHeader = r"^\s*WEBVTT\s*"
@@ -43,16 +43,29 @@ def is_timestamp(str):
     return (True if re.search(RegTimestamp, str) else False)
 
 
-class Scene:
-    def __init__(self, start='', end='', transcript=[], sub_type='vtt'):
+class Scene(object):
+    """
+    Scene to manage each block of time range with subtitle in it.
+    To create:
+        s = Scene(start='10.000', end='55.000')
+    To add transcript for a scene:
+        s.add_transcript('lorem ipsum')
+    """
+
+    def __init__(self, start='', end=''):
         self.start = start
         self.end = end
-        self.transcript = transcript
-        self.sub_type = sub_type
+        self.transcript = []
+        self.sub_type = 'vtt'
         self._to_milliseconds_()
 
     def add_transcript(self, txt):
         self.transcript.append(txt)
+
+    def string(self):
+        return """%s -> %s
+%s
+    """ % (self.start, self.end, '\n'.join(self.transcript))
 
     def _to_milliseconds_(self):
         self.start_millisec = parse_timestamp(self.start)

@@ -51,22 +51,22 @@ def test_is_timestamp():
 
 def test_scene_init_failure():
     with pytest.raises(errors.BadTimestamp):
-        scene.Scene(start="00:00:10.abc", end="00:00:10.000")
+        scene.Scene(start='00:00:10.abc', end='00:00:10.000')
 
 
 def test_scene_init_success():
-    s = scene.Scene(start="00:00:10.000", end="00:00:10.500")
-    assert s.start == "00:00:10.000"
-    assert s.end == "00:00:10.500"
+    s = scene.Scene(start='00:00:10.000', end='00:00:10.500')
+    assert s.start == '00:00:10.000'
+    assert s.end == '00:00:10.500'
     assert s.start_millisec == 10_000
     assert s.end_millisec == 10_500
 
 
 def test_scene_add_transcript():
-    s = scene.Scene(start="00:00:10.000", end="00:00:10.500")
-    s.add_transcript("alpha")
-    assert s.transcript == ["alpha"]
-    s.add_transcript("beta")
-    assert s.transcript == ["alpha", "beta"]
-    s.add_transcript("theta")
-    assert s.transcript == ["alpha", "beta", "theta"]
+    s = scene.Scene(start='00:00:10.000', end='00:00:10.500')
+    s.add_transcript('alpha')
+    assert s.transcript == ['alpha']
+    s.add_transcript('beta')
+    assert s.transcript == ['alpha', 'beta']
+    s.add_transcript('theta')
+    assert s.transcript == ['alpha', 'beta', 'theta']

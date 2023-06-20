@@ -1,4 +1,4 @@
-__all__ = ['BadDataError', 'MissingFileError']
+__all__ = ['BadDataError', 'BadTimestamp', 'MissingFileError']
 
 
 class BadDataError(Exception):

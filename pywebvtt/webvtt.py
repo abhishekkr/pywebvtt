@@ -19,7 +19,7 @@ class WebVTT(object):
         self.current_scene = None
         self.scenes = []
 
-    def ParseFile(self):
+    def parse_file(self):
         if not os.path.exists(self.vttfile):
             raise MissingFileError("Missing File: %s" % self.vttfile)
         encoding = self._get_file_encoding_(self.vttfile)
