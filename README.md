@@ -2,12 +2,14 @@
 ## pywebvtt
 
 > to parse WebVTT subtitle file into a traversable data structure
+>
+> [pypi/pywebvtt](https://pypi.org/project/pywebvtt/)
 
 * to run tests `poetry install && poetry run pytest`
 
 * to run example `poetry install && poetry run python examples/parse-sample.py`
 
-* sample usage
+* sample usage `pip install pywebvtt` and
 
 ```
 import pywebvtt
