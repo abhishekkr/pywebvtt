@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pywebvtt"
-version = "0.1.0"
+version = "0.2.0"
 description = "webvtt subtitle parser to traversable data struct"
 authors = ["AbhishekKr <abhikumar163@gmail.com>"]
 readme = "README.md"

@@ -2,6 +2,15 @@ from pywebvtt import webvtt, errors
 import pytest
 
 
+def test_webvtt_options_init():
+    default_options = webvtt.WebVTTOptions()
+    assert default_options.max_lines == 2
+    assert default_options.max_chars_per_line == 16
+    options = webvtt.WebVTTOptions(max_lines=1, max_chars_per_line=10)
+    assert options.max_lines == 1
+    assert options.max_chars_per_line == 10
+
+
 def test_webvtt_init_failure():
     w = webvtt.WebVTT(vttfile='not-a-sample.vtt')
     assert w.vttfile == 'not-a-sample.vtt'
