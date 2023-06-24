@@ -22,3 +22,13 @@ for s in scenes:
 ```
 
 ---
+
+### ToDo
+
+> [source: VTT Mozilla doc](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
+
+* add support for multi-line NOTE
+
+* add support for Style & Cue blocks
+
+---
